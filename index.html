@@ -16,12 +16,9 @@
 </header>
   <main class="p-3 mb-2  text-black bg-opacity-25 ">
     
-    <!-- <a href="./card-index.html" rel="">
-      <button type="button my-5" class="btn btn-outline-success ms-5">New Task </button>
-        </a>  -->
         <!-- Adding Modal start -->
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add Task
 </button>
 
@@ -34,7 +31,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="card mx-auto " >
+        <!-- <div class="card mx-auto " > -->
     <form class="row " action="" method="">
         <div class="col-md-12">
           <label for="name" class="form-label">Task Name:</label>
@@ -48,7 +45,7 @@
           <label for="assign" class="form-label">Assigned To:</label>
           <input type="text" class="form-control" id="assign" placeholder="">
         </div>
-        <div class="col d-flex flex-row bd-highlight mb-3">
+        <div class="col d-flex flex-row bd-highlight my-3">
           <label for="status" class="form-label me-3">Status:</label>
           <select id="status" class="form-select">
             <option selected>Choose...</option>
@@ -60,14 +57,14 @@
         </div>
           <div class="col-md-12 mt-2">
             <label for="date">Due Date:</label>
-            <input type="date" id="date" name="date">
+            <input type="date" class="form-control" id="date" name="date">
           </div>
         <!-- <div class="col-12 d-flex justify-content-center">
           <a href="./index.html"><button type="button" class="btn btn-primary mb-2 btn-lg mt-2">Save</button></a>
         </div> -->
       </form>
       
-    </div>
+    <!-- </div> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -85,12 +82,13 @@
           <div class="card h-100">
            
             <div class="card-body">
-              <h6 class="card-text">Task Name : Finish Bootstrap modules today </h6>
-              <h6 class="card-text">Description : </h6>
+              <h5 class="card-text fw-bold d-inline">Task Name : </h5>
+              <p class="d-inline">Finish Bootstrap modules today</p>
+              <p class="card-text mt-4"> <strong>Description :</strong> </p>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <h6 class="card-text">Assigned To: Sarika </h6>
-              <h6 class="card-text">Status : Pending</h6>
-              <h6 class="card-text">Date : 31/8//2021</h6>
+              <p class="card-text"><strong>Assigned To :</strong> Sarika </p>
+              <p class="card-text"><strong>Status :</strong> Pending</p>
+              <p class="card-text"><strong>Date :</strong> 31/8//2021</p>
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" type="button">Edit</button>
@@ -104,12 +102,13 @@
           <div class="card h-100">
             
             <div class="card-body">
-              <h6 class="card-text">Task Name : Finish CSS and Grid modules </h6>
-              <h6 class="card-text">Description : </h6>
+              <h5 class="card-text fw-bold d-inline">Task Name : </h5>
+              <p class="d-inline">Finish CSS and Grid modules</p>
+              <p class="card-text mt-4"> <strong>Description :</strong> </p>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <h6 class="card-text">Assigned To: Farahnaz</h6>
-              <h6 class="card-text">Status : Done</h6>
-              <h6 class="card-text">Date : 31/8//2021</h6>
+              <p class="card-text"><strong>Assigned To :</strong> Farahnaz </p>
+              <p class="card-text"><strong>Status :</strong> Done</p>
+              <p class="card-text"><strong>Date :</strong> 31/8//2021</p>
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" type="button">Edit</button>
@@ -123,12 +122,13 @@
           <div class="card h-100">
             
             <div class="card-body">
-              <h6 class="card-text">Task Name : Finish HTML modules</h6>
-              <h6 class="card-text">Description : </h6>
+              <h5 class="card-text fw-bold d-inline">Task Name : </h5>
+              <p class="d-inline">Finish HTML modules</p>
+              <p class="card-text mt-4"> <strong>Description :</strong> </p>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <h6 class="card-text">Assigned To: Sarika</h6>
-              <h6 class="card-text">Status : To Do</h6>
-              <h6 class="card-text">Date : 31/8//2021</h6>
+              <p class="card-text"><strong>Assigned To :</strong> Sarika </p>
+              <p class="card-text"><strong>Status :</strong> To Do</p>
+              <p class="card-text"><strong>Date :</strong> 31/8//2021</p>
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" type="button">Edit</button>
@@ -142,12 +142,13 @@
           <div class="card h-100">
            
             <div class="card-body">
-              <h6 class="card-text">Task Name : Continue Flex Box</h6>
-              <h6 class="card-text">Description : </h6>
+              <h5 class="card-text fw-bold d-inline">Task Name : </h5>
+              <p class="d-inline">Continue Flex Box</p>
+              <p class="card-text mt-4"> <strong>Description :</strong> </p>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <h6 class="card-text">Assigned To: Farahnaz</h6>
-              <h6 class="card-text">Status : In Progress</h6>
-              <h6 class="card-text">Date : 31/8//2021</h6>
+              <p class="card-text"><strong>Assigned To :</strong> Farahnaz </p>
+              <p class="card-text"><strong>Status :</strong> In Progress</p>
+              <p class="card-text"><strong>Date :</strong> 31/8//2021</p>
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" type="button">Edit</button>
@@ -162,12 +163,13 @@
           <div class="card h-100">
            
             <div class="card-body">
-              <h6 class="card-text">Task Name : Learn GITHUB</h6>
-              <h6 class="card-text">Description : </h6>
+              <h5 class="card-text fw-bold d-inline">Task Name : </h5>
+              <p class="d-inline">Learn Github</p>
+              <p class="card-text mt-4"> <strong>Description :</strong> </p>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <h6 class="card-text">Assigned To: Sarika</h6>
-              <h6 class="card-text">Status : Review</h6>
-              <h6 class="card-text">Date : 31/8//2021</h6>
+              <p class="card-text"><strong>Assigned To :</strong> Sarika </p>
+              <p class="card-text"><strong>Status :</strong> Review</p>
+              <p class="card-text"><strong>Date :</strong> 31/8//2021</p>
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" type="button">Edit</button>
