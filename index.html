@@ -7,6 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="./css/style.css" /> -->
     <title>Daily Task Planner</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
 </head>
 <body>
@@ -32,33 +37,56 @@
       </div>
       <div class="modal-body">
         <!-- <div class="card mx-auto " > -->
-    <form class="row " action="" method="">
+    <form class="row " action="" method="" id="taskForm">
         <div class="col-md-12">
           <label for="name" class="form-label">Task Name:</label>
-          <input type="text" class="form-control" id="name">
+          <input type="text" class="form-control" id="myName">
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please provide a valid name.
+          </div>
+
         </div>
         <div class="col-md-12">
             <label for="floatingTextarea2">Description:</label>
             <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please provide a valid Description.
+          </div>
         </div>
         <div class="col-12">
           <label for="assign" class="form-label">Assigned To:</label>
           <input type="text" class="form-control" id="assign" placeholder="">
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please provide a valid name.
+          </div>
+          
         </div>
         <div class="col d-flex flex-row bd-highlight my-3">
           <label for="status" class="form-label me-3">Status:</label>
           <select id="status" class="form-select">
-            <option selected>Choose...</option>
+            <option selected> Choose </option>
             <option>Done</option>
             <option>Progress</option>
             <option>Pending</option>
             <option>To Do</option>
           </select>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please provide a valid Status.
+          </div>
         </div>
           <div class="col-md-12 mt-2">
             <label for="date">Due Date:</label>
-            <input type="date" class="form-control" id="date" name="date">
+            <input type="text" class="form-control datepicker" id="date" name="date">
+            <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please provide a valid Date.
           </div>
+          </div>
+          
         <!-- <div class="col-12 d-flex justify-content-center">
           <a href="./index.html"><button type="button" class="btn btn-primary mb-2 btn-lg mt-2">Save</button></a>
         </div> -->
@@ -67,8 +95,9 @@
     <!-- </div> -->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" >Save changes</button>
+        <button type="submit" id="submit">Submit</button>
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="submit" >Save changes</button> -->
       </div>
     </div>
   </div>
@@ -185,10 +214,18 @@
   
 </main>  
 
+<script type="text/javascript">
+   
+  $('.datepicker').datepicker({ 
+      startDate: new Date()
+  });
 
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<!-- <script src="./JS/taskManager.js"></script> -->
+<script src="./JS/index.js"></script>
 
 </body>
 </html>
