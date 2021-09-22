@@ -7,10 +7,11 @@
 
 
   // const taskManager = new TaskManager();
+  
 
   // taskList.addTask(myName.value, floatingTextarea2.value, assign.value, status1.value, date.value);
   // console.log(taskList.tasks);
-const  myName = document.querySelector('#myName');
+ const  myName = document.querySelector('#myName');
  const  floatingTextarea2 = document.querySelector('#floatingTextarea2');
  const  assign = document.querySelector('#assign');
  const  status1 = document.querySelector('#status');
