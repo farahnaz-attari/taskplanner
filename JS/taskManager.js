@@ -7,24 +7,24 @@ class TaskManager {
     }
     
     //function to add task
-    // addTask(myName, floatingTextarea2, assign, status1, date){
+    addTask(myName, floatingTextarea2, assign, status1, date){
              
-    //     const newTask = {
-    //         id: this.currentId++,
-    //         myName: myName,
-    //         floatingTextarea2: floatingTextarea2,
-    //         assign: assign,
-    //         status1: status1,
-    //         date: date
-    //     };
-    //     this._tasks.push(newTask);
+        const newTask = {
+            id: this.currentId++,
+            myName: myName,
+            floatingTextarea2: floatingTextarea2,
+            assign: assign,
+            status1: status1,
+            date: date
+        };
+        this._tasks.push(newTask);
 
 
-    // }
+    }
 
-    // get tasks(){
-    //     return this._tasks;
-    // }
+    get tasks(){
+        return this._tasks;
+    }
 
 }
 
