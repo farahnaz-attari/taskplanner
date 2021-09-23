@@ -5,8 +5,9 @@
 
 
 
-
-  // const taskManager = new TaskManager();
+  
+   const taskManager = new TaskManager(0);
+   console.log(taskManager.currentId);
   
 
   // taskList.addTask(myName.value, floatingTextarea2.value, assign.value, status1.value, date.value);
