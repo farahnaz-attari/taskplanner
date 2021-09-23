@@ -1,30 +1,53 @@
 //get the id from index.html
-// const taskForm = document.querySelector('#taskForm');
-
-// taskForm.addEventListener('submit', (event)=> {
-
-
-
   
    const taskManager = new TaskManager(0);
    console.log(taskManager.currentId);
    taskManager.addTask('farahnaz','student', 'sarika', 'to do', '23/09/2021');
    console.log(taskManager.tasks);
 
-  
-
-  // taskList.addTask(myName.value, floatingTextarea2.value, assign.value, status1.value, date.value);
-  // console.log(taskList.tasks);
- const  myName = document.querySelector('#myName');
- const  floatingTextarea2 = document.querySelector('#floatingTextarea2');
- const  assign = document.querySelector('#assign');
- const  status1 = document.querySelector('#status');
- const  date = document.querySelector('#date');
+   const form = document.querySelector("#taskForm");
+   
+ 
+//  const  myName = document.querySelector('#myName');
+//  const  floatingTextarea2 = document.querySelector('#floatingTextarea2');
+//  const  assign = document.querySelector('#assign');
+//  const  status1 = document.querySelector('#status');
+//  const  date = document.querySelector('#date');
  const submit = document.querySelector('#submit');
 
 
  
-const validFormFieldInput = () => {
+const validFormFieldInput = (event) => {
+   
+ 
+  const  myName = document.querySelector('#myName');
+  const  floatingTextarea2 = document.querySelector('#floatingTextarea2');
+  const  assign = document.querySelector('#assign');
+  const  status1 = document.querySelector('#status');
+  const  date = document.querySelector('#date');
+  // const submit = document.querySelector('#submit');
+  let validationFail = 0;
+  event.preventDefault();
+
+  const clearFormFields = () => {
+    myName.value = "";
+    floatingTextarea2.value = "";
+    assign.value = "";
+    status1.value = "In Progress";
+    date.value = "";
+    myName.classList.remove("is-valid");
+    floatingTextarea2.classList.remove("is-valid");
+    assign.classList.remove("is-valid");
+    status1.classList.remove("is-valid");
+    date.classList.remove("is-valid");
+  };
+
+  console.log("Task Name :" + myName.value);
+  console.log("Task Description :" + floatingTextarea2.value);
+  console.log("Task Assigned To :" + assign.value);
+  console.log("Task Due Date :" + status1.value);
+  console.log("Task Status:" + date.value);
+
 
     //checking task name//
     if (myName.value.length > 5) {
@@ -33,7 +56,7 @@ const validFormFieldInput = () => {
       } else {
         myName.classList.add("is-invalid");
         myName.classList.remove("is-valid");
-        // validationFail++;
+        validationFail++;
       }
 
     //end task name
@@ -48,7 +71,7 @@ const validFormFieldInput = () => {
       } else {
         floatingTextarea2.classList.add("is-invalid");
         floatingTextarea2.classList.remove("is-valid");
-        // validationFail++;
+        validationFail++;
       }
     //end discription//
 
@@ -59,7 +82,7 @@ const validFormFieldInput = () => {
       } else {
         assign.classList.add("is-invalid");
         assign.classList.remove("is-valid");
-        // validationFail++;
+        validationFail++;
       }
     //end assign//
     
@@ -70,20 +93,10 @@ const validFormFieldInput = () => {
       } else {
         status1.classList.add("is-invalid");
         status1.classList.remove("is-valid");
-        // validationFail++;
+        validationFail++;
       }
      //end status//
 
-     //check due date
-    //  let currentTime = Date.now();
-  // validate for date
-    
-//   $('.datepicker').datepicker({ 
-//     startDate: new Date()
-// });
-   
-
-  //
 
      if (date.value){
         date.classList.add("is-valid");
@@ -91,11 +104,26 @@ const validFormFieldInput = () => {
       } else {
         date.classList.add("is-invalid");
         date.classList.remove("is-valid");
-        // validationFail++;
+        validationFail++;
       }
      //end due date
-
+     if (validationFail > 0) {
+      validationFail = 0;
+      return;
+    } else {
+      // Push the valid input into our tasks array
+      taskManager.addTask(
+        myName.value,
+        floatingTextarea2.value,
+        assign.value,
+        status1.value,
+        date.value
+      );
+  
+     clearFormFields();
+}
 }
 
-submit.addEventListener('click',validFormFieldInput);
+ submit.addEventListener('click',validFormFieldInput);
+ 
 
