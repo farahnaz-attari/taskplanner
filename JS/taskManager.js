@@ -17,14 +17,14 @@ class TaskManager {
             status1: status1,
             date: date
         };
-        this._tasks.push({newTask});
+        this._tasks.push(newTask);
 
 
     }
 
-    // get tasks(){
-    //     return this._tasks;
-    // }
+    get tasks(){
+        return this._tasks;
+    }
 
 }
 

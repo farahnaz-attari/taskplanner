@@ -7,7 +7,10 @@
 
   
    const taskManager = new TaskManager(0);
-   console.log(taskManager.addTask('farahnaz','student', 'sarika', 'to do', '23/09/2021'));
+   console.log(taskManager.currentId);
+   taskManager.addTask('farahnaz','student', 'sarika', 'to do', '23/09/2021');
+   console.log(taskManager.tasks);
+
   
 
   // taskList.addTask(myName.value, floatingTextarea2.value, assign.value, status1.value, date.value);
