@@ -40,7 +40,7 @@
     <form class="row " action="" method="" id="taskForm">
         <div class="col-md-12">
           <label for="myName" class="form-label">Task Name:</label>
-          <input type="text" class="form-control" id="myName">
+          <input type="text" class="form-control" id="myName" required>
           <div class="valid-feedback">Looks good!</div>
           <div class="invalid-feedback">
             Please provide a valid name.
@@ -69,7 +69,7 @@
           <select id="status" class="form-select">
             <option selected> Choose </option>
             <option>Done</option>
-            <option>Progress</option>
+            <option>In Progress</option>
             <option>Pending</option>
             <option>To Do</option>
           </select>
@@ -95,9 +95,9 @@
     <!-- </div> -->
       </div>
       <div class="modal-footer">
-        <button type="submit" id="submit">Submit</button>
-        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="submit" >Save changes</button> -->
+        <button type="submit" id="submit" class="btn btn-primary" >Submit</button>
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button> -->
+        <!-- <button type="button" class="btn btn-primary" id="submit" >Save changes</button> -->
       </div>
     </div>
   </div>
@@ -221,6 +221,8 @@
   });
 
 </script>
+
+ 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
