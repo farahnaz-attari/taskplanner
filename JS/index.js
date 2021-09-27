@@ -58,7 +58,8 @@ const validFormFieldInput = () => {
         assign.classList.remove("is-valid");
         // validationFail++;
       }
-    //end assign//
+    
+      //end assign//
     
      //check status//
      if (status1.value !== 'Choose') {
