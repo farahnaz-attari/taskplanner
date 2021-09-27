@@ -67,7 +67,8 @@ event.preventDefault();
         assign.classList.remove("is-valid");
          validationFail++;
       }
-    //end assign//
+    
+      //end assign//
     
 
      //check status//
