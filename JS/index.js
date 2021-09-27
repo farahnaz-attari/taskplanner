@@ -1,15 +1,13 @@
 //get the id from index.html
 const taskManager = new TaskManager(0);
-console.log(taskManager.currentId);
-taskManager.addTask('farahnaz','student', 'sarika', 'to do', '23/09/2021');
-console.log(taskManager.tasks);
+
 
 const  myName = document.querySelector('#myName');
 const  floatingTextarea2 = document.querySelector('#floatingTextarea2');
 const  assign = document.querySelector('#assign');
 const  status1 = document.querySelector('#status');
 const  date = document.querySelector('#date');
-let validationFail = 1;
+let validationFail = 0;
  const submit = document.querySelector('#submit');
  
  
@@ -115,12 +113,15 @@ event.preventDefault();
         status1.value,
         date.value
       );
-     clearFormFields();
-      //$("#exampleModal").modal("hide");
+      taskManager.render();
+      clearFormFields();
+      $("#exampleModal").modal("hide");
     }
       
      
   }
+
+  
 
  submit.addEventListener('click',validFormFieldInput);
  

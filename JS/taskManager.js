@@ -1,5 +1,33 @@
+//creat createtaskhtml 
+const createTaskHtml = (myName, floatingTextarea2, assign, status1, date ) => {
+    const html = ` 
+    
+    <div class="card mt-5 me-2"  style="width: 25rem;">
+      <div class=" h-100">
 
+      <div class="card-body">
+        <h5 class="card-text fw-bold d-inline">Task Name : </h5>
+        <p class="d-inline">${myName}</p>
+        <p class="card-text mt-4"> <strong>Description :</strong> </p>
+        <p class="card-text">${floatingTextarea2}</p>
+        <p class="card-text"><strong>Assigned To :</strong> ${assign} </p>
+        <p class="card-text"><strong>Status :</strong> ${status1}</p>
+        <p class="card-text"><strong>Date :</strong> ${date}</p>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary me-md-2" type="button">Edit</button>
+          <button class="btn btn-primary" type="button">Delete</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
+      `;
+    return html;
+
+}
+
+//create taskManager
 class TaskManager {
     constructor(currentId = 0){
         this._tasks = [];
@@ -25,12 +53,22 @@ class TaskManager {
     get tasks(){
         return this._tasks;
     }
+    //add render method
+    render(){
+    let tasksHtmlList =[];
+    for(let i=0; i<this.tasks.length; i++){
+        let currentTask = this.tasks[i];
+        let date = new Date(currentTask.date);
+        let formatDate = (date.getDate() +  "/" +(date.getMonth()+1 )+ "/" + date.getFullYear());
+        let taskHtml = createTaskHtml(currentTask.myName, currentTask.floatingTextarea2, currentTask.assign, currentTask.status1, formatDate);
+        tasksHtmlList.push(taskHtml);
+    }
+    let newTaskhtml = tasksHtmlList.join('\n');
+    const html = document.querySelector('#html');
+    html.innerHTML = newTaskhtml;
+    }
 
 }
 
-
-
-// taskList.addTask(myName.value, floatingTextarea2.value, assign.value, status1.value, date.value);
-// console.log(taskList.tasks);
 
 
