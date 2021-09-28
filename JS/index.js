@@ -1,6 +1,8 @@
 //get the id from index.html
 const taskManager = new TaskManager(0);
 
+taskManager.load();
+taskManager.render();
 
 const  myName = document.querySelector('#myName');
 const  floatingTextarea2 = document.querySelector('#floatingTextarea2');
@@ -115,6 +117,7 @@ event.preventDefault();
         status1.value,
         date.value
       );
+      taskManager.save();
       taskManager.render();
       clearFormFields();
       $("#exampleModal").modal("hide");
@@ -144,6 +147,7 @@ event.preventDefault();
     
     task.status1 = 'Done';
     taskManager.render();
+    
     // let removeDoneButton = task.status1 === "Done"? doneButton.style.display = "none": doneButton.style.display = 'block';
    }
  });

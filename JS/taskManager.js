@@ -71,19 +71,48 @@ class TaskManager {
     }
     //add render method
     render(){
+       
     let tasksHtmlList =[];
     for(let i=0; i<this.tasks.length; i++){
         let currentTask = this.tasks[i];
         let date = new Date(currentTask.date);
-        let formatDate = (date.getDate() +  "/" +(date.getMonth()+1 )+ "/" + date.getFullYear());
+        let formatDate = (date.getDate() +  "/" +(date.getMonth()+1 )+ "/" + date.getFullYear()); 
         let taskHtml = createTaskHtml(currentTask.myName, currentTask.floatingTextarea2, currentTask.assign, currentTask.status1, formatDate, currentTask.id);
-        
         tasksHtmlList.push(taskHtml);
     }
     let newTaskhtml = tasksHtmlList.join('\n');
     const html = document.querySelector('#html');
     html.innerHTML = newTaskhtml;
     }
+
+
+    // Save Method start
+ save(){
+    console.log('inside save')
+    const tasksJson = JSON.stringify(this.tasks);
+
+    localStorage.setItem("tasks",tasksJson);
+    console.log(localStorage);
+    const currentId = String(this.currentId);
+    localStorage.setItem('currentId',currentId);
+ }
+ // load Method start
+ load(){
+ 
+    if(localStorage.getItem('tasks')){
+        console.log('inside if')
+        let tasksJson = localStorage.getItem('tasks');
+        console.log(tasksJson);
+       this._tasks = JSON.parse(tasksJson);
+       console.log(this._tasks)
+
+    }
+    if(localStorage.getItem('currentId')){
+        let currentId = localStorage.getItem('currentId');
+       this.currentId = Number(currentId);
+    }
+
+ }
 
 }
 
