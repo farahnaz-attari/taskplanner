@@ -9,6 +9,7 @@ const  status1 = document.querySelector('#status');
 const  date = document.querySelector('#date');
 let validationFail = 0;
  const submit = document.querySelector('#submit');
+ //const doneButton = document.querySelector(".done-button");
  
  
 const validFormFieldInput = (event) => {
@@ -125,6 +126,27 @@ event.preventDefault();
   
 
  submit.addEventListener('click',validFormFieldInput);
+
+ const taskList = document.querySelector(".task-list");
+
+ taskList.addEventListener('click',event=>{
+   if(event.target.classList.contains("done-button")){
+    const parentTask =
+    event.target.parentElement.parentElement.parentElement.parentElement;
+    console.log(parentTask);
+
+    const taskId = Number(parentTask.dataset.taskId);
+    //console.log(Number(parentTask.dataset.taskId));
+    console.log(parentTask.dataset);
+
+    let task = taskManager.getTaskById(taskId);
+    console.log(task);
+    
+    task.status1 = 'Done';
+    taskManager.render();
+    // let removeDoneButton = task.status1 === "Done"? doneButton.style.display = "none": doneButton.style.display = 'block';
+   }
+ });
  
 
 
