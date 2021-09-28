@@ -85,6 +85,35 @@ class TaskManager {
     html.innerHTML = newTaskhtml;
     }
 
+
+    // Save Method start
+ save(){
+    console.log('inside save')
+    const tasksJson = JSON.stringify(this.tasks);
+
+    localStorage.setItem("tasks",tasksJson);
+    console.log(localStorage);
+    const currentId = String(this.currentId);
+    localStorage.setItem('currentId',currentId);
+ }
+ // load Method start
+ load(){
+ 
+    if(localStorage.getItem('tasks')){
+        console.log('inside if')
+        let tasksJson = localStorage.getItem('tasks');
+        console.log(tasksJson);
+       this._tasks = JSON.parse(tasksJson);
+       console.log(this._tasks)
+
+    }
+    if(localStorage.getItem('currentId')){
+        let currentId = localStorage.getItem('currentId');
+       this.currentId = Number(currentId);
+    }
+
+ }
+
 }
 
 
