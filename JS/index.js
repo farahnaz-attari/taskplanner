@@ -1,6 +1,8 @@
 //get the id from index.html
 const taskManager = new TaskManager(0);
 
+taskManager.load();
+taskManager.render();
 
 
 const  myName = document.querySelector('#myName');
@@ -146,8 +148,9 @@ event.preventDefault();
     
     task.status1 = 'Done';
     taskManager.render();
-   
-    }   
+    
+    // let removeDoneButton = task.status1 === "Done"? doneButton.style.display = "none": doneButton.style.display = 'block';
+   }
  });
 
  
