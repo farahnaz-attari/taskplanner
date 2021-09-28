@@ -71,13 +71,13 @@ class TaskManager {
     }
     //add render method
     render(){
+       
     let tasksHtmlList =[];
     for(let i=0; i<this.tasks.length; i++){
         let currentTask = this.tasks[i];
         let date = new Date(currentTask.date);
-        let formatDate = (date.getDate() +  "/" +(date.getMonth()+1 )+ "/" + date.getFullYear());
+        let formatDate = (date.getDate() +  "/" +(date.getMonth()+1 )+ "/" + date.getFullYear()); 
         let taskHtml = createTaskHtml(currentTask.myName, currentTask.floatingTextarea2, currentTask.assign, currentTask.status1, formatDate, currentTask.id);
-        
         tasksHtmlList.push(taskHtml);
     }
     let newTaskhtml = tasksHtmlList.join('\n');
