@@ -72,20 +72,36 @@ class TaskManager {
     //add render method
     render(){
     let tasksHtmlList =[];
+    const doneButton = document.querySelector(".done-button");
     for(let i=0; i<this.tasks.length; i++){
         let currentTask = this.tasks[i];
         let date = new Date(currentTask.date);
         let formatDate = (date.getDate() +  "/" +(date.getMonth()+1 )+ "/" + date.getFullYear());
         let taskHtml = createTaskHtml(currentTask.myName, currentTask.floatingTextarea2, currentTask.assign, currentTask.status1, formatDate, currentTask.id);
-        
         tasksHtmlList.push(taskHtml);
     }
     let newTaskhtml = tasksHtmlList.join('\n');
     const html = document.querySelector('#html');
     html.innerHTML = newTaskhtml;
+    
     }
 
+    save(){   
+            const tasksJson = JSON.stringify(this.tasks);
+        
+            localStorage.setItem("tasks",tasksJson);
+            console.log(localStorage);
+            const currentId = String(this.currentId);
+            localStorage.setItem('currentId',currentId);
+         }
+
+         
+        
+
 }
+
+
+
 
 
 
