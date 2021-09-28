@@ -15,6 +15,7 @@ const createTaskHtml = (myName, floatingTextarea2, assign, status1, date ) => {
         <p class="card-text"><strong>Date :</strong> ${date}</p>
         
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2 done-button" type="button" id="done">Done</button>
           <button class="btn btn-primary me-md-2" type="button">Edit</button>
           <button class="btn btn-primary" type="button">Delete</button>
         </div>
