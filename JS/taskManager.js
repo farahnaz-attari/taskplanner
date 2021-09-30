@@ -11,7 +11,7 @@ const createTaskHtml = (myName, floatingTextarea2, assign, status1, date, id ) =
         <p class="card-text mt-4"> <strong>Description :</strong> </p>
         <p class="card-text">${floatingTextarea2}</p>
         <p class="card-text"><strong>Assigned To :</strong> ${assign} </p>
-        <p class="card-text"><strong>Status :</strong> ${status1}</p>
+        <p class="card-text"><strong>Status :</strong>  <span class="${status1 === "Done" ? "text-success" :  "text-dark"}"> ${status1}</span></p>
         <p class="card-text"><strong>Date :</strong> ${date}</p>
         
         
