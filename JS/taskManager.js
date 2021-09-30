@@ -16,7 +16,8 @@ const createTaskHtml = (myName, floatingTextarea2, assign, status1, date, id ) =
         
         
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary done-button" type="button">Done</button>
+        <button  class="btn btn-primary done-button ${status1 === "Done" ? "invisible" : "visible"}"
+         type="button" id="done">Done</button>
           <button class="btn btn-primary me-md-2" type="button">Edit</button>
           <button class="btn btn-primary" type="button">Delete</button>
           
@@ -73,6 +74,7 @@ class TaskManager {
     render(){
        
     let tasksHtmlList =[];
+    const doneButton = document.querySelector(".done-button");
     for(let i=0; i<this.tasks.length; i++){
         let currentTask = this.tasks[i];
         let date = new Date(currentTask.date);
@@ -83,6 +85,7 @@ class TaskManager {
     let newTaskhtml = tasksHtmlList.join('\n');
     const html = document.querySelector('#html');
     html.innerHTML = newTaskhtml;
+    
     }
 
 
@@ -100,7 +103,7 @@ class TaskManager {
  load(){
  
     if(localStorage.getItem('tasks')){
-        console.log('inside if')
+       // console.log('inside if')
         let tasksJson = localStorage.getItem('tasks');
         console.log(tasksJson);
        this._tasks = JSON.parse(tasksJson);
@@ -114,7 +117,12 @@ class TaskManager {
 
  }
 
+ 
+
 }
+
+
+
 
 
 

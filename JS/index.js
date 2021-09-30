@@ -4,6 +4,7 @@ const taskManager = new TaskManager(0);
 taskManager.load();
 taskManager.render();
 
+
 const  myName = document.querySelector('#myName');
 const  floatingTextarea2 = document.querySelector('#floatingTextarea2');
 const  assign = document.querySelector('#assign');
@@ -11,7 +12,7 @@ const  status1 = document.querySelector('#status');
 const  date = document.querySelector('#date');
 let validationFail = 0;
  const submit = document.querySelector('#submit');
- //const doneButton = document.querySelector(".done-button");
+ const doneButton = document.querySelector(".done-button");
  
  
 const validFormFieldInput = (event) => {
@@ -139,18 +140,23 @@ event.preventDefault();
     console.log(parentTask);
 
     const taskId = Number(parentTask.dataset.taskId);
-    //console.log(Number(parentTask.dataset.taskId));
+    
     console.log(parentTask.dataset);
 
     let task = taskManager.getTaskById(taskId);
-    console.log(task);
+    
     
     task.status1 = 'Done';
+    
     taskManager.render();
     
-    // let removeDoneButton = task.status1 === "Done"? doneButton.style.display = "none": doneButton.style.display = 'block';
    }
+   taskManager.save();
+   taskManager.render();
+   
  });
+
+ 
  
 
 
