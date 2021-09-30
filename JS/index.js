@@ -144,13 +144,16 @@ event.preventDefault();
     console.log(parentTask.dataset);
 
     let task = taskManager.getTaskById(taskId);
-    console.log(task);
+    
     
     task.status1 = 'Done';
+    
     taskManager.render();
     
-    // let removeDoneButton = task.status1 === "Done"? doneButton.style.display = "none": doneButton.style.display = 'block';
    }
+   taskManager.save();
+   taskManager.render();
+   
  });
 
  
