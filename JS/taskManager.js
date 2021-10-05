@@ -1,5 +1,7 @@
 //creat createtaskhtml 
 const createTaskHtml = (myName, floatingTextarea2, assign, status1, date, id ) => {
+    // let todayDate = new Date();
+    // let formatDate = (todayDate.getDate() +  "/" +(todayDate.getMonth()+1 )+ "/" + todayDate.getFullYear());
     const html = ` 
     
     <div class="card mt-5 me-2"  style="width: 25rem;" data-task-id="${id}" >
@@ -15,18 +17,16 @@ const createTaskHtml = (myName, floatingTextarea2, assign, status1, date, id ) =
         <p class="card-text"><strong>Date :</strong> ${date}</p>
         
         
+        
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button  class="btn btn-primary done-button ${status1 === "Done" ? "invisible" : "visible"}"
-         type="button" id="done">Done</button>
-          <button class="btn btn-primary me-md-2" type="button">Edit</button>
-          <button class="btn btn-primary" type="button">Delete</button>
+        <button  class="btn btn-primary done-button ${status1 === "Done" ? "invisible" : "visible"}" type="button" id="done">Done</button>
+          <button class="btn btn-primary me-md-2 edit-button" type="button">Edit</button>
+          <button class="btn btn-primary delete-button" type="button">Delete</button>
           
         </div>
         </div>
         </div>
-        </div>
-
-      `;
+        </div>`;
     return html;
 
 }
@@ -50,6 +50,19 @@ class TaskManager {
          }
          return foundTask;
     }
+
+
+    // function to delete task
+
+    delete(taskId){
+        const newTasks = [];
+       this._tasks.forEach(currentTask =>{
+        if(currentTask.id !== taskId ){
+            newTasks.push(currentTask);
+         }
+     this._tasks = newTasks;
+       });
+     }
     
     //function to add task
     addTask(myName, floatingTextarea2, assign, status1, date){
@@ -70,7 +83,14 @@ class TaskManager {
     get tasks(){
         return this._tasks;
     }
+
+    set tasks(_tasks){
+        return this._tasks;
+    }
+
+
     //add render method
+
     render(){
        
     let tasksHtmlList =[];
@@ -116,6 +136,35 @@ class TaskManager {
     }
 
  }
+
+
+ //edit method start
+
+ editTask(taskId){
+    console.log(`edit task ID`+taskId);
+    $('#edit-exampleModal').modal('show');
+    const edit_myName = document.querySelector("#edit_myName")
+    const edit_floatingTextarea2 = document.querySelector("#edit_floatingTextarea2");
+    const edit_assign = document.querySelector("#edit_assign");
+    const edit_status = document.querySelector("#edit_status");
+    const edit_date = document.querySelector("#edit_date");
+
+
+    for (let i = 0; i< this._tasks.length; i++){
+        const task = this._tasks[i];
+
+        if(task.id === taskId){
+            edit_myName.value = task.myName;
+            edit_floatingTextarea2.value =task.floatingTextarea2
+            edit_assign.value = task.assign;
+            edit_status.value = task.status1;
+            edit_date.value = task.date;
+            }
+        }
+        return task;            
+}
+
+ 
 
  
 

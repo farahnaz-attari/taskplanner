@@ -14,6 +14,9 @@ let validationFail = 0;
  const submit = document.querySelector('#submit');
  const doneButton = document.querySelector(".done-button");
  
+ var today = new Date().toISOString().split('T')[0];
+ //console.log("today" + today);
+ date.setAttribute("min",today);
  
 const validFormFieldInput = (event) => {
   
@@ -151,8 +154,35 @@ event.preventDefault();
     taskManager.render();
     
    }
+
+
+   //edit task 
+   if(event.target.classList.contains("edit-button")){
+    const parentTask =
+    event.target.parentElement.parentElement.parentElement.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
+    let task = taskManager.getTaskById(taskId);
+    let taskEdit = taskManager.editTask(taskId);
+        
+   }
+
+
    taskManager.save();
    taskManager.render();
+
+   //delete task
+    if(event.target.classList.contains("delete-button")){
+      const parentTask =
+    event.target.parentElement.parentElement.parentElement.parentElement;
+
+    const taskId = Number(parentTask.dataset.taskId);
+
+    //let task = taskManager.getTaskById(taskId);
+    taskManager.delete(taskId);
+    
+    }
+    taskManager.save();
+    taskManager.render();
    
  });
 
