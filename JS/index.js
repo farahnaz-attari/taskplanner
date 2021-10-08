@@ -21,6 +21,12 @@ const edit_assign = document.querySelector('#edit_assign');
 const edit_status = document.querySelector('#edit_status');
 const edit_date = document.querySelector('#edit_date');
 const Update = document.querySelector('#Update');
+
+//date format
+var today = new Date().toISOString().split('T')[0];
+ //console.log("today" + today);
+ date.setAttribute("min",today);
+
  
  
 const validFormFieldInput = (event) => {
