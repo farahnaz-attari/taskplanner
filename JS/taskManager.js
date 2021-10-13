@@ -4,7 +4,7 @@ const createTaskHtml = (myName, floatingTextarea2, assign, status1, date, id ) =
      let formatDate = (todayDate.getDate() +  "/" +(todayDate.getMonth()+1 )+ "/" + todayDate.getFullYear());
     const html = ` 
     
-    <div class="mt-3 me-2 middle card ${status1 === "Done"? "border-success text-success" : status1 === "In Progress" ? "border-warning text-warning": status1 === "Review" ? "border-danger text-danger": "border-info text-info"} " style="width: 23rem;" data-task-id="${id}" >
+    <div class="mx-auto mt-3 middle card ${status1 === "Done"? "border-success text-success" : status1 === "In Progress" ? "border-warning text-warning": status1 === "Review" ? "border-danger text-danger": "border-info text-info"} " style="width: 23rem;" data-task-id="${id}" >
       <div class=" h-100">
 
       <div class="card-body">
