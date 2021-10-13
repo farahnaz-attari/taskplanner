@@ -20,6 +20,8 @@ button{
     margin-top: 8px;
     }
 
+    
+
     .visible{
       display: block;
     }
@@ -31,16 +33,35 @@ button{
     
 
     @media only screen and (max-width: 800px){
-        .card-1{
+        .middle{
           max-width: 50%;
+        }
+        .headerstyle{
+          max-width: 100%;
         }
         h1{
           font-size: 50%;
         }
       }
     
+      @media only screen and (max-width: 400px){
+        .middle{
+          max-width: 50%;
+        }
+        .headerstyle{
+          max-width: 100%;
+        }
+        h1{
+          font-size: 50%;
+        }
+      }
+
+
       @media only screen and (max-width: 600px){
-        .card-1{
+        .middle{
+          max-width: 100%;
+        }
+        .headerstyle{
           max-width: 100%;
         }
       }

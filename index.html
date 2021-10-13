@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Daily Task Planner</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
@@ -13,20 +13,23 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         
-    
+        <meta name="viewport" content="width=350" />
+
 </head>
 <body>
-    <header class="d-flex justify-content-center text-center ">
-    <h1 class="h1 my-5" style="width: 500px;">Daily Task Planner</h1>
+    <header class="d-flex justify-content-center text-center text-info headerstyle">
+    <h1 class="h1 mt-4" style="width: 500px;">Daily Task Planner</h1>
   
 </header>
   <main class="p-3 mb-2  text-black bg-opacity-25 ">
     
         <!-- Adding Modal start -->
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="d-flex justify-content-center mt-4">
+<button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 10rem;">
   Add Task
 </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,7 +85,7 @@
         </div>
           <div class="col-md-12 mt-2">
             <label for="date">Due Date:</label>
-            <input type="text" class="form-control datepicker" id="date" name="date">
+            <input type="date" class="form-control datepicker" id="date" name="date">
             <div class="valid-feedback">Looks good!</div>
           <div class="invalid-feedback">
             Please provide a valid Date.
@@ -148,7 +151,7 @@
             <option selected> Choose </option>
             <option>Done</option>
             <option>In Progress</option>
-            <option>Pending</option>
+            <option>Review</option>
             <option>To Do</option>
           </select>
           <div class="valid-feedback">Looks good!</div>
@@ -159,7 +162,7 @@
         </div>
           <div class="col-md-12 mt-2">
             <label for="edit_date">Due Date:</label>
-            <input type="text" class="form-control datepicker" id="edit_date" name="date">
+            <input type="date" class="form-control datepicker" id="edit_date" name="date">
             <div class="valid-feedback">Looks good!</div>
           <div class="invalid-feedback">
             Please provide a valid Date.
@@ -183,12 +186,55 @@
   
 </div>
    
-        <!-- add card in the html -->
-         <div class="row row-cols-1 row-cols-md-3 g-4 m-3 task-list"   id="html">
+        
 
-<!-- insert card here -->
+<!-- adding status columns -->
 
-         </div>
+<!-- <div class="row justify-content-center mt-2 "> -->
+  <div class="middle">
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-3 task-list "  id="task-list">
+        <!-- Start of 'to-do' card -->
+        <div class="col-sm-12 col-md-6 col-lg task-list middle">
+          <h2 class="text-white bg-info text-center rounded 
+          ">To Do</h2>
+          <div
+            class="col-sm-12 col-md-6 col-lg"
+            id="to_do_tasks" style="width: 20rem;"
+          ></div>
+        </div>
+        <!-- end of col -->
+
+        <!-- Start of 'In-progress' card -->
+        <div class="col-sm-12 col-md-6 col-lg task-list middle">
+          <h2 class="text-white bg-warning text-center rounded">In Progress</h2>
+          <div
+            class="col-sm-12 col-md-6 col-lg "
+            id="progress_tasks" style="width: 20rem;"
+          ></div>
+        </div>
+        <!-- end of col -->
+
+        <!-- Start of 'review' card -->
+        <div class="col-sm-12 col-md-6 col-lg task-list middle">
+          <h2 class="text-white bg-danger text-center rounded">Review</h2>
+          <div
+            class="col-sm-12 col-md-6 col-lg "
+            id="review_tasks" style="width: 20rem;"
+          ></div>
+        </div>
+        <!-- end of col -->
+
+        <!-- Start of 'done' card column -->
+        <div class="col-sm-12 col-md-6 col-lg task-list middle">
+          <h2 class="text-white bg-success text-center rounded" >Done</h2>
+          <div class="col-sm-12 col-md-6 col-lg" id="done_tasks" style="width: 20rem;"></div>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+
+      <!-- status column ends -->
+    </div>
 
   
 </main>  
@@ -197,13 +243,14 @@
 <script src="./JS/index.js"></script>
 
 
-<script type="text/javascript">
+
+<!-- <script type="text/javascript">
    
   $('.datepicker').datepicker({ 
       startDate: new Date()
   });
 
-</script>
+</script> -->
 
 <!-- <script>
   $(document).ready(function(){

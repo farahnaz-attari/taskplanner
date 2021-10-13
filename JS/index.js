@@ -13,6 +13,7 @@ const  date = document.querySelector('#date');
 let validationFail = 0;
 const submit = document.querySelector('#submit');
 const doneButton = document.querySelector(".done-button");
+const sortTask = document.querySelector("#sort-task");
 
 //edit Modal variable
 const edit_myName = document.querySelector('#edit_myName');
@@ -224,19 +225,9 @@ if (edit_status.value !== 'Choose') {
      
   }
 
-
-
-
-
-
-
-
-  
-
+//validate and add task
  submit.addEventListener('click',validFormFieldInput);
- 
 
- 
 
  const taskList = document.querySelector(".task-list");
 
@@ -260,17 +251,7 @@ if (edit_status.value !== 'Choose') {
    }
 
 
-   //edit task 
-   if(event.target.classList.contains("edit-button")){
-    const parentTask =
-    event.target.parentElement.parentElement.parentElement.parentElement;
-    const taskId = Number(parentTask.dataset.taskId);
-    let task = taskManager.getTaskById(taskId);
-    let taskEdit = taskManager.editTask(taskId);
-        
-   }
-
-
+  
    taskManager.save();
    taskManager.render();
 
@@ -284,6 +265,9 @@ if (edit_status.value !== 'Choose') {
     }
     // taskManager.save();
     // taskManager.render();
+
+    //edit task
+
     if(event.target.classList.contains("edit-button")){
       const parentTask =
       event.target.parentElement.parentElement.parentElement.parentElement;
@@ -296,6 +280,8 @@ if (edit_status.value !== 'Choose') {
     }
     taskManager.save();
     taskManager.render();
+
+
    
  });
 
