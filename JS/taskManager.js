@@ -89,7 +89,7 @@ class TaskManager {
                 // console.log('inside if'+ currentTask.id + '==' + edit_taskId )
                     this._tasks[i].myName = edit_myName,
                     this._tasks[i].floatingTextarea2 = edit_floatingTextarea2,
-                    this._tasks[i].assign =edit_assign,
+                    this._tasks[i].assign = edit_assign,
                     this._tasks[i].status1 = edit_status,
                     this._tasks[i].date = edit_date 
            
