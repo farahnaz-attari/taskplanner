@@ -32,18 +32,18 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content bg-opacity-45" style="background-color: rgb(204, 248, 215); ">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
+        <h5 class="modal-title text-info" id="exampleModalLabel">New Task</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <!-- <div class="card mx-auto " > -->
     <form class="row " action="" method="" id="taskForm">
         <div class="col-md-12">
-          <label for="myName" class="form-label">Task Name:</label>
+          <label for="myName" class="form-label text-info">Task Name:</label>
           <input type="text" class="form-control" id="myName" required>
           <div class="valid-feedback">Looks good!</div>
           <div class="invalid-feedback">
@@ -51,7 +51,7 @@
           </div>
 
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 text-info">
             <label for="floatingTextarea2">Description:</label>
             <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea2" style="height: 100px"></textarea>
             <div class="valid-feedback">Looks good!</div>
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="col-12">
-          <label for="assign" class="form-label">Assigned To:</label>
+          <label for="assign" class="form-label text-info">Assigned To:</label>
           <input type="text" class="form-control" id="assign" placeholder="">
           <div class="valid-feedback">Looks good!</div>
           <div class="invalid-feedback">
@@ -69,7 +69,7 @@
           
         </div>
         <div class="col d-flex flex-row bd-highlight my-3">
-          <label for="status" class="form-label me-3">Status:</label>
+          <label for="status" class="form-label me-3 text-info">Status:</label>
           <select id="status" class="form-select">
             <option selected> Choose </option>
             <option>Done</option>
@@ -83,7 +83,7 @@
           </div>
           
         </div>
-          <div class="col-md-12 mt-2">
+          <div class="col-md-12 mt-2 text-info">
             <label for="date">Due Date:</label>
             
 
@@ -113,17 +113,17 @@
 
 <div class="modal fade" id="edit-exampleModal" tabindex="-1" aria-labelledby="edit-exampleModal" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: rgb(204, 248, 215);">
       <div class="modal-header">
-        <h5 class="modal-title" id="edit-exampleModalLabel">Edit Task</h5>
+        <h5 class="modal-title text-info" id="edit-exampleModalLabel">Edit Task</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <!-- <div class="card mx-auto " > -->
     <form class="row " action="" method="" id="taskForm">
         <div class="col-md-12">
-          <input type="hidden" class="form-control" id="edit_taskId" required>
-          <label for="edit_myName" class="form-label">Task Name:</label>
+          <input type="hidden" class="form-control " id="edit_taskId" required>
+          <label for="edit_myName" class="form-label text-info">Task Name:</label>
           <input type="text" class="form-control" id="edit_myName" required>
           <div class="valid-feedback">Looks good!</div>
           <div class="invalid-feedback">
@@ -131,7 +131,7 @@
           </div>
 
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 text-info">
             <label for="floatingTextarea2">Description:</label>
             <textarea class="form-control" placeholder="Leave a description here" id="edit_floatingTextarea2" style="height: 100px"></textarea>
             <div class="valid-feedback">Looks good!</div>
@@ -140,7 +140,7 @@
           </div>
         </div>
         <div class="col-12">
-          <label for="assign" class="form-label">Assigned To:</label>
+          <label for="assign" class="form-label text-info">Assigned To:</label>
           <input type="text" class="form-control" id="edit_assign" placeholder="">
           <div class="valid-feedback">Looks good!</div>
           <div class="invalid-feedback">
@@ -149,7 +149,7 @@
           
         </div>
         <div class="col d-flex flex-row bd-highlight my-3">
-          <label for="edit_status" class="form-label me-3">Status:</label>
+          <label for="edit_status" class="form-label me-3 text-info">Status:</label>
           <select id="edit_status" class="form-select">
             <option selected> Choose </option>
             <option>Done</option>
@@ -163,7 +163,7 @@
           </div>
           
         </div>
-          <div class="col-md-12 mt-2">
+          <div class="col-md-12 mt-2 text-info">
             <label for="edit_date">Due Date:</label>
 
            
@@ -197,8 +197,8 @@
 <!-- adding status columns -->
 
 <!-- <div class="row justify-content-center mt-2 "> -->
-  <div class="middle">
-  <div class="row row-cols-1 row-cols-md-3 g-4 m-3 task-list "  id="task-list">
+  <div class="row justify-content-center">
+  <div class="row row-cols-1 row-cols-md-3 g-1 m-3 task-list "  id="task-list">
         <!-- Start of 'to-do' card -->
         <div class="col-sm-12 col-md-6 col-lg task-list middle">
           <h2 class="text-white bg-info text-center rounded 

@@ -4,7 +4,7 @@ const createTaskHtml = (myName, floatingTextarea2, assign, status1, date, id ) =
      let formatDate = (todayDate.getDate() +  "/" +(todayDate.getMonth()+1 )+ "/" + todayDate.getFullYear());
     const html = ` 
     
-    <div class="mt-3 me-2 middle card ${status1 === "Done"? "border-success text-success" : status1 === "In Progress" ? "border-warning text-warning": status1 === "Review" ? "border-danger text-danger": "border-info text-info"}" style="width: 23rem;" data-task-id="${id}" >
+    <div class="mt-3 me-2 middle card ${status1 === "Done"? "border-success text-success" : status1 === "In Progress" ? "border-warning text-warning": status1 === "Review" ? "border-danger text-danger": "border-info text-info"} " style="width: 23rem;" data-task-id="${id}" >
       <div class=" h-100">
 
       <div class="card-body">
@@ -16,7 +16,7 @@ const createTaskHtml = (myName, floatingTextarea2, assign, status1, date, id ) =
         <p class="card-text"><strong>Status :</strong> ${status1} </p>
         <p class="card-text"><strong>Date :</strong> ${date}</p>       
         
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="d-grid gap-2 d-md-flex justify-content-center">
         <button  class="btn btn-primary bg-success done-button ${status1 === "Done" ? "invisible" : "visible"}"
          type="button" id="done">Done</button>
           <button class="btn btn-primary me-md-2  edit-button" type="button">Edit</button>
