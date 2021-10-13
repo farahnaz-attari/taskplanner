@@ -33,9 +33,9 @@ button{
     
 
     @media only screen and (max-width: 800px){
-        .middle{
+        /* .middle{
           max-width: 50%;
-        }
+        } */
         .headerstyle{
           max-width: 100%;
         }
@@ -45,9 +45,9 @@ button{
       }
     
       @media only screen and (max-width: 400px){
-        .middle{
+        /* .middle{
           max-width: 50%;
-        }
+        } */
         .headerstyle{
           max-width: 100%;
         }
@@ -58,9 +58,9 @@ button{
 
 
       @media only screen and (max-width: 600px){
-        .middle{
+        /* .middle{
           max-width: 100%;
-        }
+        } */
         .headerstyle{
           max-width: 100%;
         }
