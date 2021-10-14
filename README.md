@@ -1,5 +1,11 @@
 ##  Task planner
 
-#####  by Sarika and Farahnaz
+### by Sarika and Farahnaz
 
-######  JWD6 Generation Australia 
+###  JWD6 Generation Australia 
+
+## Objective
+* Task Planner App to CRED create, read, edit, delete the tasks and sorting according to the status
+* 
+* Third item
+* Fourth item
