@@ -27,5 +27,9 @@
 ### Add tasks
 - User can add task with add task button
 - All the tasks go into one array
-- 
-- 
+- Store them in local storage
+
+![image (2)](https://user-images.githubusercontent.com/88653065/137274000-37a69379-9477-4006-b49d-ca3f15c8f9bd.png)
+
+
+![image (1)](https://user-images.githubusercontent.com/88653065/137273879-5d3bd11e-5f94-4504-a9ea-e520ac875d41.png)
